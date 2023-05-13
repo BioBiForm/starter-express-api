@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="panel.css">
+    <link rel="stylesheet" href="giris.css">
+         
+</head>
+<body>
+    <script src="/authsaglayici.js" defer></script>
+  <div id="white-background">
+</div>
+    <div id="yukleniyor">
+    <div id="yukleniyor-header">Lütfen Bekleyin</div>
+    <div id="yukleniyor-body">
+      <div class="loader"></div>
+    </div>
+    <div id="yukleniyor-footer">
+    </div>
+</div>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Giriş Yap</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input id="geposta" type="text" placeholder="E-Posta adresi" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="gsifre" type="password" class="password" placeholder="Şifre" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Beni Hatırla</label>
+                        </div>
+                        
+                        <!--<a href="#" class="text">Şifrenizi mi unuttunuz?</a><br><br>-->
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" onclick="GirisYap()" value="Giriş Yap">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Hesabınız yok mu?
+                        <a href="#" class="text signup-link">Kayıt Ol</a>
+                    </span><br>
+                    <span class="text">
+                        <a href="/sirketgiris" class="text signup-link">Şirket Olarak Giriş Yapın</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Kayıt Ol</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input id="isim" type="text" placeholder="İsim Soyisim" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="eposta" type="text" placeholder="E-Posta adresi" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="sifre" type="password" class="password" placeholder="Şifre" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="okul" type="text" placeholder="Okul" required>
+                        <i class="uil uil-building icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="sinif" type="text" placeholder="Sınıf" required>
+                        <i class="uil uil-list-ol-alt icon"></i>
+                    </div>
+                     <div class="input-field">
+                        <input id="bolum" type="text" placeholder="Bölüm" required>
+                        <i class="uil uil-book-alt icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="cv" type="file" placeholder="Bölüm" required>
+                        <i class="uil uil-file icon"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">Kullanım Şartlarını kabul ediyorum</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" onclick="KayitOl()" value="Kayıt Ol">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Hesabınız var mı?
+                        <a href="#" class="text login-link">Giriş Yap</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+  if(localStorage.getItem("girisb")){
+  if(localStorage.getItem("girisb").includes("@") && localStorage.getItem("girisb").includes(".")  && !localStorage.getItem("girisb").includes("--sirket--"))
+  {
+    window.location.href = "/profil"
+  }
+  else if(localStorage.getItem("girisb").includes("--sirket--"))
+    {
+      window.location.href = "/sirketler/sirket/panel"
+    }
+  }
+  
+  const container = document.querySelector(".container"),
+      pwShowHide = document.querySelectorAll(".showHidePw"),
+      pwFields = document.querySelectorAll(".password"),
+      signUp = document.querySelector(".signup-link"),
+      login = document.querySelector(".login-link");
+
+    //   js code to show/hide password and change icon
+    pwShowHide.forEach(eyeIcon =>{
+        eyeIcon.addEventListener("click", ()=>{
+            pwFields.forEach(pwField =>{
+                if(pwField.type ==="password"){
+                    pwField.type = "text";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("uil-eye-slash", "uil-eye");
+                    })
+                }else{
+                    pwField.type = "password";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                    })
+                }
+            }) 
+        })
+    })
+
+    // js code to appear signup and login form
+    signUp.addEventListener("click", ( )=>{
+        container.classList.add("active");
+    });
+    login.addEventListener("click", ( )=>{
+        container.classList.remove("active");
+    });
+  
+  
+</script>
+</body>
+</html>
+

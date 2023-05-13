@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Türk Biyologlar Derneği</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/panel.css" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    
+    <style media="screen, print">
+      @font-face {
+        font-family: "Çok iyi font";
+        src: url("https://cdn.glitch.global/440e545c-6bcc-4068-885f-5804db0f28d2/Poppins-SemiBold.ttf?v=1679767542335");
+      }
+      @font-face {
+        font-family: "Çok iyi font ama bold değil";
+        src: url("https://cdn.glitch.global/440e545c-6bcc-4068-885f-5804db0f28d2/Poppins-Regular.ttf?v=16797675456659");
+      }
+      body {
+        font-family: "Çok iyi font";
+        background-color: #7157d3;
+        -webkit-font-smoothing: antialiased;
+        color: white;
+      }
+      h3 {
+        font-family: "Çok iyi font";
+        font-weight: bold;
+      }
+      
+      .card__content {
+        color: black;
+        font-family: "Çok iyi font ama bold değil";
+        padding: 20px;
+      }
+      
+      .inceparagraf{
+        font-family: "Çok iyi font ama bold değil";
+      }
+      
+      .kalinparagraf{
+        font-family: "Çok iyi font";
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!-- dialog box -->
+<div id="white-background">
+</div>
+<div id="dlgbox">
+    <div id="dlg-header">Yeni İlan Ekle</div>
+    <div id="dlg-body">İlan bilgilerini doldurun.
+    <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Başlık"
+            required
+            name="Baslik"
+            id="baslik"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Açıklama"
+            required
+            name="Aciklama"
+            id="aciklama"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Düzenleyen Firma"
+            required
+            name="Firma"
+            id="firma"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Tarih ve Saat"
+            max="2999-06-14T00:00"
+            required
+            name="Tarih"
+            id="tarih"
+            onfocus="(this.type='datetime-local')"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Yer"
+            required
+            name="Yer"
+            id="yer"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="email"
+            placeholder="İletişim E-Postası"
+            required
+            name="EPosta"
+            id="eposta"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="file"
+            placeholder="Resim"
+            required
+            name="Yer"
+            id="resim"
+          />
+    </div>
+    <div id="dlg-footer">
+        <button class="w3-button w3-section gitbuton pribtn" onclick="dlgOK()">Ekle</button>
+        <button class="w3-button w3-white w3-section gitbuton secbtn" onclick="dlgCancel()">İptal</button>
+    </div>
+</div>
+    
+
+    <div id="edlgbox">
+    <div id="edlg-header">Yeni İlan Ekle</div>
+    <div id="edlg-body">İlan bilgilerini doldurun.
+    <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Başlık"
+            required
+            name="Baslik"
+            id="ebaslik"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Açıklama"
+            required
+            name="Aciklama"
+            id="eaciklama"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Düzenleyen Firma"
+            required
+            name="Firma"
+            id="efirma"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Tarih ve Saat"
+            max="2999-06-14T00:00"
+            required
+            name="Tarih"
+            id="etarih"
+            onfocus="(this.type='datetime-local')"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Zoom Linki"
+            required
+            name="Yer"
+            id="link"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="email"
+            placeholder="İletişim E-Postası"
+            required
+            name="EPosta"
+            id="eeposta"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="file"
+            placeholder="Resim"
+            required
+            name="Yer"
+            id="eresim"
+          />
+    </div>
+    <div id="edlg-footer">
+        <button class="w3-button w3-section gitbuton pribtn" onclick="edlgOK()">Ekle</button>
+        <button class="w3-button w3-white w3-section gitbuton secbtn" onclick="edlgCancel()">İptal</button>
+    </div>
+</div>
+    
+    <script src="/panel.js" defer></script>
+
+    <!-- Navbar (sit on top) -->
+    <nav class="navbar">
+      <!-- LOGO -->
+      <a href="/" class="w3-bar-item logo-hover"><b style="margin-right: 6px; font-size: xx-large;">BBF</b><small
+          style="font-size: x-large;">BioBiForm</small></a>
+    
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#etkinlikler">Etkinlikler</a></li>
+          <li><a href="#partnerler">Partnerlerimiz</a></li>
+          <li><a onclick="showDialog()">İletişim</a></li>
+          <li><a id="kulkaniciisim" onclick="BasvuruBilgisi()"></a>
+          <button class="kulikobtn" onclick="BasvuruBilgisi()">
+            <img src="https://cdn.glitch.global/d715ea4b-6135-49e7-b49d-85a3298eb352/profile-circle-svgrepo-com(1).svg?v=1683121080092" class="kullaniciikon">
+          </button></li>
+          </div>
+        </ul>
+    </nav>
+    
+    
+    <div class="w3-content w3-padding" style="max-width: 1564px">
+    
+      <div class="orta panel-giris" id="girisekran">
+      
+     <h3 class="w3-border-bottom w3-border-white w3-padding-16">
+          Giriş Yap
+        </h3>
+        <p>İlan paylaşabilmek için giriş yapmalısınız.</p>
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Kullanıcı Adı"
+            required
+            name="kullaniciadi"
+            id="kullaniciadi"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="password"
+            placeholder="Şifre"
+            required
+            name="sifre"
+            id="sifre"
+          />
+          <button class="w3-button w3-white w3-section gitbuton secbtn"
+                  onclick="GirisKontrol()">
+            <i class="fa fa-paper-plane"></i> Panele Eriş
+          </button>
+        </div>
+      
+      <div class="ortala orta" id="yonetekran">
+      </div>
+      <div class="ortala orta" id="etkinlikekran">
+      </div>
+      </div>
+  </body>
+</html>

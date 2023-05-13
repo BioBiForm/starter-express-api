@@ -1,0 +1,24 @@
+{
+  "sirketler": [
+    {
+      "isim": "Diagnotech",
+      "eposta": "diagnotech@gmail.com",
+      "sifre": "52c734a44cd0456a886f43f694cea9d4e65c3336414f3743fe73d8eafc451676"
+    },
+    {
+      "isim": "Bi Eksen",
+      "eposta": "bieksen@gmail.com",
+      "sifre": "efabe0896be92b1e45b05bfb5acaf0fd945a6e630c6dabee01e75a7af4bffade"
+    },    
+    {
+      "isim": "Genzbio",
+      "eposta": "genzbio@gmail.com",
+      "sifre": "4b1ed744bd6a7ae57a4196e2c96eeb5ab25d8132b744622a52a2c2b57d854a20"
+    },
+    {
+      "isim": "Spark",
+      "eposta": "cagankoyun@sparktech.llc",
+      "sifre": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
+    }
+  ]
+}
